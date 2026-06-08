@@ -6,7 +6,9 @@ public class MyFirstClass {
         int i = 0;
         i = 10;
 
+        String name = "홍길동";
+
         // sout
-        System.out.println("헬로!!!!!!!!!!!!");
+        System.out.println("헬로!!!!!!!!!!!!" + name);
     }
 }
