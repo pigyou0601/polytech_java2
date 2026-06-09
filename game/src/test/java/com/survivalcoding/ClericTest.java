@@ -10,8 +10,13 @@ class ClericTest {
     @DisplayName("selfAid를 하면 hp를 5 회복해야 한다")
     void heal() {
         //given(준비)
-        final Cleric cleric1 = new Cleric("클래릭", 30, 9);
-        final Cleric cleric2 = new Cleric("클래릭", 51, 11);
+        Cleric cleric1 = new Cleric("클래릭", 30, 9);
+        Cleric cleric2 = new Cleric("클래릭", 51, 11);
+
+        Cleric cleric3 = new Cleric("아서스", 40, 5);
+        Cleric cleric4 = new Cleric("아서스", 35);
+        Cleric cleric5 = new Cleric("아서스");
+        //final Cleric cleric6 = new Cleric();
 
         //when(실행)
 //        cleric.attack();
@@ -25,6 +30,11 @@ class ClericTest {
         assertEquals(9, cleric1.mp);
         assertEquals(50, cleric2.hp);
         assertEquals(10, cleric2.mp);
+
+        assertEquals(40, cleric3.hp);
+        assertEquals(35, cleric4.hp);
+        assertEquals(50, cleric5.hp);
+
 
     }
 }

@@ -10,6 +10,18 @@ public class Cleric {
     static final int maxHp = 50; //클래릭 최대 체력
     static final int maxMp = 10; //클래릭 최대 마나
 
+    public Cleric(String name) {
+        this.name = name;
+        this.hp = maxHp;
+        this.mp = maxMp;
+    }
+
+    public Cleric(String name, int hp) {
+        this.name = name;
+        this.hp = Math.min(hp, maxHp);
+        this.mp = maxMp;
+    }
+
     public Cleric(String name, int hp, int mp) {
         this.name = name;
         this.hp = Math.min(hp, maxHp);
@@ -30,9 +42,9 @@ public class Cleric {
                 System.out.println(this.name + "는 체력이 가득찼다");
             } else {
                 this.mp -= 5;
-                this.hp += 5;
+//                this.hp += 5;
                 //Math.min(숫자1,숫자2) 중 작은 수를 선택
-                int actualHeal = Math.min(this.maxHp - this.hp, 5);
+                int actualHeal = Math.min(maxHp - this.hp, 5);
                 this.hp += actualHeal;
 //                if (this.hp > maxHp) {
 //                    this.hp = maxHp;
@@ -53,7 +65,7 @@ public class Cleric {
         sec += prayPlus;
         //this.mp += sec;
         //mp 조정
-        int actualMp = Math.min(this.maxMp - this.mp, sec);
+        int actualMp = Math.min(maxMp - this.mp, sec);
         this.mp += actualMp;
 //        if (this.mp > maxMp) {
 //            this.mp = maxMp;
