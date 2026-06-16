@@ -16,6 +16,9 @@ public class Main {
         poisonSlime.setHp(100);
         poisonSlime.attack(superHero);
 
+        Wizard wizard = new Wizard();
+        wizard.heal(hero);
+
 
         //hero.name = "김용사";
         //hero.hp = 100;
